@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question 1</title>
+</head>
+
+<body>
+
+    <p style="display: inline;">Today is : </p>
+    <p id="printSec1" style="display: inline;"></p>
+    <br>
+    <p style="display: inline;">Current Time is : </p>
+    <p style="display: inline;" id="printSec2"></p>
+    <script>
+        var printDate = new Date();
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        document.getElementById("printSec1").innerHTML = days[printDate.getDay()];
+        var hr = printDate.getHours();
+        var min = printDate.getMinutes();
+        var sec = printDate.getSeconds();
+        var ampm = "AM";
+        if (hr > 12) {
+            hr = hr - 12;
+            ampm = "PM";
+        }
+        document.getElementById("printSec2").innerHTML = hr + " " + ampm + " : " + min + " : " + sec;
+    </script>
+
+
+</body>
+
+</html>
